@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8"/>
+<head>
+<script type="text/javascript" src="colorpicker.js"></script>
+<link rel="stylesheet" type="text/css" href="colorpicker.css"/>
+</head>
+<body onload="init()">
+	<p id="intro">This is a palette generator for xterm and other programs that might use the ANSI and aixterm-like colors. The color settings can be seen in the example below, and the .Xresources configuration below that.</p>
+	<div id="manualExample">
+		<br>[user@hostname ~]$ vim color_test.sh
+		<br><p class="example 10">1 </p><p class="example 14">#!/bin/sh</p>
+		<br><p class="example 10">2 </p><p class="example 11">for</p> C <p class="example 11">in</p> {<p class="example 14">0</p>0..<p class="example 13">16</p>}; <p class="example 11">do</p>
+		<br><p class="example 10">3 </p>&emsp;<p class="example 11">echo</p> <p class="example 13">-en</p> "\033[38;5;<p class="example 14">${C}</p><p class="example 13">m</p><p class="example 14">$C</p> "
+		<br><p class="example 10">4 </p><p class="example 11">done</p>
+		<br><p class="example 10">5 </p><p class="example 11">echo</p> <p class="example 13">-e</p> "\e<p class="example 13">(B</p>\e<p class="example 13">[m</p>"
+		<br><p class="example 10">6 <p class="example 4">~</p>
+		<br>[user@hostname ~]$ ./color_test.sh
+		<br>
+			<p class="example 0">00</p>
+			<p class="example 1">01</p>
+			<p class="example 2">02</p>
+			<p class="example 3">03</p>
+			<p class="example 4">04</p>
+			<p class="example 5">05</p>
+			<p class="example 6">06</p>
+			<p class="example 7">07</p>
+			<p class="example 8">08</p>
+			<p class="example 9">09</p>
+			<p class="example 10">10</p>
+			<p class="example 11">11</p>
+			<p class="example 12">12</p>
+			<p class="example 13">13</p>
+			<p class="example 14">14</p>
+			<p class="example 15">15</p>
+	</div>
+	<br>
+	<div id="spanContainer"></div>
+	<div id="blockContainer"></div>
+	<div id="exampleContainer"></div>
+	<div id="xcodeContainer">
+	</div>
+</body>
+</html>

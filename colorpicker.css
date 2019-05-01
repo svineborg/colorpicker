@@ -1,0 +1,55 @@
+body {
+	display:block;
+	padding:2em;
+	margin:auto;
+}
+
+p {
+	display:inline;
+}
+
+.colorName {
+	display:block;
+	text-align:center;
+	padding:0;
+}
+
+.colorCode{
+	display:block;
+	text-align:center;
+	padding:1px;
+	margin:auto;
+	width:6em;
+	maxlength:7;
+}
+
+#blockContainer{
+	padding:2em;
+	margin:auto;
+}
+
+.colorBlock{
+	display:inline-grid; /* this is the change */
+	border-style: none;
+	/*border-color:invisible;
+	border-width:1px;*/
+	margin:.5em;
+	padding:.5em;
+	width:8em;
+	height:8em;
+}
+
+span {
+	padding:0px;
+	margin:0px;
+}
+
+.slider{
+	min:1;
+	max:255;
+	default:128;
+	width:7em;
+	step:1;
+	display:block;
+	margin:auto;
+}
