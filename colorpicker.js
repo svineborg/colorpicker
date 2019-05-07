@@ -10,7 +10,11 @@ var refresh = function(){
 		colorCodes[i].style.color = FOREGROUND;
 		var examples = document.getElementsByClassName("example " + i.toString());
 		for(var j = 0; j < examples.length; j++){
-			examples[j].style.color = colorCodes[i].value;
+			if( examples[j].nodeName == "span" ){
+				examples[j].style.background = colorCodes[i].value;
+			} else {
+				examples[j].style.color = colorCodes[i].value;
+			}
 		}
 	}
 };
@@ -48,6 +52,11 @@ function textRGB(colorBlock){
 	refresh();
 }
 
+function setCode(id,hex){
+	code = document.getElementById("example"+id.toString()+"Xcode");
+	code.textContent = code.textContent.replace(/#....../,hex.toString());
+}
+
 function setRGB(colorBlock,hex){
 	colorBlock.style.background = hex;
 	colorBlock.querySelector(".red").value = hexToDec(hex.substring(1,3));
@@ -59,8 +68,7 @@ function setRGB(colorBlock,hex){
 		FOREGROUND = hex;
 		colorBlock.style.color = BACKGROUND;
 	}
-//	setCode(colorBlock.id[5],hex);
-	refresh();
+	setCode(colorBlock.id.replace("color",'').replace("Block",""),hex);
 }
 
 function makeBlock(id,name){
@@ -87,11 +95,10 @@ function makeSpan(id,hex){
 
 function makeCode(id,hex,name){
 	var c = document.createElement("p");
-	c.id = "example " + id.toString() + "Xcode";
+	c.id = "example" + id.toString() + "Xcode";
 	c.classList.add("example",id.toString(),"Xcode");
 	c.innerHTML = "*." + name.toString() + " : " + hex.toString();
-	c.appendChild(document.createElement("br"));
-	return c;
+return c;
 }
 
 function init(){
@@ -125,6 +132,7 @@ function init(){
 		codeContainer.appendChild(c);
 		setRGB(newBlock,colorsArray[i][1].toString());
 	}
+	//generate Background and Foreground
 	var bg = makeBlock("B","background");
 	bg.lastChild.innerText = "background";
 	blockContainer.appendChild(bg);

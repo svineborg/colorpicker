@@ -4,8 +4,13 @@ body {
 	margin:auto;
 }
 
-p {
+p.example {
 	display:inline;
+}
+
+p.Xcode {
+	display:block;
+	margin:0;
 }
 
 .colorName {
