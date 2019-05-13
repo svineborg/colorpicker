@@ -1,44 +1,86 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <meta charset="UTF-8"/>
+
 <head>
-<script type="text/javascript" src="colorpicker.js"></script>
-<link rel="stylesheet" type="text/css" href="colorpicker.css"/>
+    <title>Color Picker</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="colorpicker.css" rel="stylesheet" type="text/css"/>
 </head>
+
 <body onload="init()">
-	<p id="intro">This is a tool for testing and generating 16 color palettes, like those used inxterm and other programs that might use the ANSI and aixterm-like colors. The color settings can be seen in the example below, and the .Xresources configuration below that.</p>
-	<div id="manualExample">
-		<br>[user@hostname ~]$ vim color_test.sh
-		<br><p class="example 10">1 </p><p class="example 14">#!/bin/sh</p>
-		<br><p class="example 10">2 </p><p class="example 11">for</p> C <p class="example 11">in</p> {<p class="example 14">0</p>0..<p class="example 13">16</p>}; <p class="example 11">do</p>
-		<br><p class="example 10">3 </p>&emsp;<p class="example 11">echo</p> <p class="example 13">-en</p> "\033[38;5;<p class="example 14">${C}</p><p class="example 13">m</p><p class="example 14">$C</p> "
-		<br><p class="example 10">4 </p><p class="example 11">done</p>
-		<br><p class="example 10">5 </p><p class="example 11">echo</p> <p class="example 13">-e</p> "\e<p class="example 13">(B</p>\e<p class="example 13">[m</p>"
-		<br><p class="example 10">6 <p class="example 4">~</p>
-		<br>[user@hostname ~]$ ./color_test.sh
-		<br>
-			<p class="example 0">00</p>
-			<p class="example 1">01</p>
-			<p class="example 2">02</p>
-			<p class="example 3">03</p>
-			<p class="example 4">04</p>
-			<p class="example 5">05</p>
-			<p class="example 6">06</p>
-			<p class="example 7">07</p>
-			<p class="example 8">08</p>
-			<p class="example 9">09</p>
-			<p class="example 10">10</p>
-			<p class="example 11">11</p>
-			<p class="example 12">12</p>
-			<p class="example 13">13</p>
-			<p class="example 14">14</p>
-			<p class="example 15">15</p>
-	</div>
-	<br>
-	<div id="spanContainer"></div>
-	<div id="blockContainer"></div>
-	<div id="exampleContainer"></div>
-	<div id="xcodeContainer">
-	</div>
+
+    <p id="intro">
+        This is a tool for testing and generating 16 color palettes, like those used inxterm and other programs
+        that might use the ANSI and aixterm-like colors. The color settings can be seen in the example below, and the
+        .Xresources configuration below that.
+    </p>
+
+    <div id="manualExample">
+        <div class="terminal">
+            <div class="terminal-bar">
+                <ul class="terminal-bar-ul">
+                    <li><div class="control term-green"></div></li>
+                    <li><div class="control term-yellow"></div></li>
+                    <li><div class="control term-red"></div></li>
+                </ul>
+            </div>
+            <code>
+                [user@hostname ~]$ vim color_test.sh
+                <br>
+                <span class="example 10">1 </span>
+                <span class="example 14">#!/bin/sh</span>
+                <br>
+                <span class="example 10">2 </span>
+                <span class="example 11">for</span> C <span class="example 11">in</span>
+                {<span class="example 14">0</span>0..<span class="example 13">
+                16</span>}; <span class="example 11">do</span>
+                <br>
+                <span class="example 10">3 </span>&nbsp&nbsp<span class="example 11">echo</span>
+                <span class="example 13">-en</span> "\033[38;5;<span class="example 14">${C}</span>
+                <span class="example 13">m</span>
+                <span class="example 14">$C</span> "
+                <br>
+                <span class="example 10">4 </span>
+                <span class="example 11">done</span>
+                <br>
+                <span class="example 10">5 </span>
+                <span class="example 11">echo</span>
+                <span class="example 13">-e</span> "\e<span class="example 13">(B</span>\e<span class="example 13">[m</span>"
+                <br>
+                <span class="example 10">6</span>
+                <span class="example 4">~</span>
+                <br/>[user@hostname ~]$ ./color_test.sh
+                <br>
+            </code>
+            <br/>
+        </div>
+        <br/>
+        <p class="example 0">00</p>
+        <p class="example 1">01</p>
+        <p class="example 2">02</p>
+        <p class="example 3">03</p>
+        <p class="example 4">04</p>
+        <p class="example 5">05</p>
+        <p class="example 6">06</p>
+        <p class="example 7">07</p>
+        <p class="example 8">08</p>
+        <p class="example 9">09</p>
+        <p class="example 10">10</p>
+        <p class="example 11">11</p>
+        <p class="example 12">12</p>
+        <p class="example 13">13</p>
+        <p class="example 14">14</p>
+        <p class="example 15">15</p>
+    </div>
+    <br>
+    <div id="spanContainer"></div>
+    <div id="blockContainer"></div>
+    <div id="exampleContainer"></div>
+    <div id="xcodeContainer"></div>
+
+    <script src="tinyColor.js" type="text/javascript"></script>
+    <script src="colorpicker.js" type="text/javascript"></script>
 </body>
 </html>

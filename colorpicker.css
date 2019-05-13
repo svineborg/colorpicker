@@ -1,7 +1,14 @@
+html {
+	border-color: #575757;
+	color: #e8e6e3;
+	background-color: #181a1b !important;
+}
+
 body {
 	display:block;
 	padding:2em;
 	margin:auto;
+	font-family: 'Roboto', sans-serif;
 }
 
 p.example {
@@ -25,7 +32,6 @@ p.Xcode {
 	padding:1px;
 	margin:auto;
 	width:6em;
-	maxlength:7;
 }
 
 #blockContainer{
@@ -45,16 +51,50 @@ p.Xcode {
 }
 
 span {
-	padding:0px;
-	margin:0px;
+	padding:0;
+	margin:0;
 }
 
 .slider{
-	min:1;
-	max:255;
-	default:128;
 	width:7em;
-	step:1;
+	padding-top: 5px;
 	display:block;
 	margin:auto;
+}
+
+.terminal {
+	background-color: black;
+}
+
+.terminal-bar {
+	background-color: aliceblue;
+	height: 20px;
+	text-align: right;
+}
+
+.terminal-bar-ul {
+	list-style: none;
+}
+
+.terminal-bar-ul > li {
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.control {
+	height: 13px;
+	width: 13px;
+	border-radius: 100%;
+}
+
+.term-green {
+	background-color: green;
+}
+
+.term-yellow {
+	background-color: #cc9900;
+}
+
+.term-red {
+	background-color: red;
 }
